@@ -28,7 +28,7 @@ nisse <- function(name,mypin){
     #line <- readline()
     line <- mypin
     
-    if(line == msrpwd | 
+    if(line == msrpw | 
            suppressWarnings(as.integer(line) == pincode[which(name == all)])){
         
         if(line == msrpwd) name <- all 
