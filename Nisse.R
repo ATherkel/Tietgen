@@ -5,7 +5,7 @@ nisse <- function(name,mypin){
              "Morten Skjalm","Kristina")
     
     #url <- getURL("https://raw.githubusercontent.com/ATherkel/Tietgen/master/Pincodes.R",
-              ssl.verifypeer=0L, followlocation=1L)
+    #          ssl.verifypeer=0L, followlocation=1L)
     #eval(parse(text=url))
     
     set.seed(1)
