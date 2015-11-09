@@ -4,9 +4,13 @@ nisse <- function(name,mypin){
              "William","Josephine","Anders","Emilie",
              "Morten Skjalm","Kristina")
     
-    url <- getURL("https://raw.githubusercontent.com/ATherkel/Tietgen/master/Pincodes.R",
+    #url <- getURL("https://raw.githubusercontent.com/ATherkel/Tietgen/master/Pincodes.R",
               ssl.verifypeer=0L, followlocation=1L)
-    eval(parse(text=url))
+    #eval(parse(text=url))
+    
+    set.seed(1)
+    pincode <- floor(runif(length(all),1e3,1e4-1))
+
     
     # Set seed for replication
     set.seed(100)
