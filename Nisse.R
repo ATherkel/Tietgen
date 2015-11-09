@@ -1,4 +1,4 @@
-nisse <- function(name){
+nisse <- function(name,mypin){
 
     all <- c("Jonas","Liv","Jens","Christoffer","Aniella",
              "William","Josephine","Anders","Emilie",
@@ -24,8 +24,9 @@ nisse <- function(name){
     
     # print(all[paired.with][all == name])
     
-    cat("Type your 4 digit password to verify yourself")
-    line <- readline()
+    #cat("Type your 4 digit password to verify yourself")
+    #line <- readline()
+    line <- mypin
     
     if(line == msrpwd | 
            suppressWarnings(as.integer(line) == pincode[which(name == all)])){
