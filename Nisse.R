@@ -31,7 +31,7 @@ nisse <- function(name,mypin){
     if(line == msrpw | 
            suppressWarnings(as.integer(line) == pincode[which(name == all)])){
         
-        if(line == msrpwd) name <- all 
+        if(line == msrpw) name <- all 
 
         print(paste(name, ", you are the elf of ",
                     all[paired.with][all == name],"!",sep = ""))
