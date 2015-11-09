@@ -4,12 +4,12 @@ nisse <- function(name,mypin){
              "William","Josephine","Anders","Emilie",
              "Morten Skjalm","Kristina")
     
-    #url <- getURL("https://raw.githubusercontent.com/ATherkel/Tietgen/master/Pincodes.R",
-    #          ssl.verifypeer=0L, followlocation=1L)
-    #eval(parse(text=url))
+    url <- getURL("https://raw.githubusercontent.com/ATherkel/Tietgen/master/Pincodes.R",
+              ssl.verifypeer=0L, followlocation=1L)
+    eval(parse(text=url))
     
-    set.seed(1)
-    pincode <- floor(runif(length(all),1e3,1e4-1))
+    #set.seed(1)
+    #pincode <- floor(runif(length(all),1e3,1e4-1))
 
     
     # Set seed for replication
@@ -23,7 +23,7 @@ nisse <- function(name,mypin){
     ## Pair the elements from the 'all' list to another element
     paired.with <- sample(all.seq)
     
-    ## If any element is paired with itself, redo the pairing
+    ## Make sure nobody is paired with themselves
     while(any(paired.with == all.seq))
         paired.with <- sample(all.seq)
     
@@ -35,10 +35,8 @@ nisse <- function(name,mypin){
     
     if(line == msrpw | 
            suppressWarnings(as.integer(line) == pincode[which(name == all)])){
-        
         if(line == msrpw) name <- all 
-
-        print(paste(name, ", you are the elf of ",
+        cat(paste(name, ", you are the elf of ",
                     all[paired.with][all == name],"!",sep = ""))
     } else {
         cat("Pincode wrong.")
