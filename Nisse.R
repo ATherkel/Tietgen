@@ -1,5 +1,5 @@
 nisse <- function(name,mypin){
-
+    
     all <- c("Jonas","Liv","Jens","Christoffer","Aniella",
              "William","Josephine","Anders","Emilie",
              "Morten Skjalm","Kristina")
@@ -10,7 +10,7 @@ nisse <- function(name,mypin){
     
     set.seed(1)
     pincode <- floor(runif(length(all),1e3,1e4-1))
-
+    
     
     # Set seed for replication
     set.seed(100)
@@ -33,13 +33,19 @@ nisse <- function(name,mypin){
     #line <- readline()
     line <- mypin
     
+    # If we have not yet started, tell the user!
+    if(Sys.Date() < "2015-11-25"){
+        cat(paste(name, ", we don't start until the 25th November 2015!",
+                  sep = ""))
+        return(cat(" "))
+    }
+     
     if(line == msrpw | 
            suppressWarnings(as.integer(line) == pincode[which(name == all)])){
         if(line == msrpw) name <- all 
-        cat(paste(name, ", you are the elf of ",
-                    all[paired.with][all == name],"!",sep = ""))
+        cat(paste(name, ", you are the Secret Santa of ",
+                  all[paired.with][all == name],"!",sep = ""))
     } else {
         cat("Pincode wrong.")
     }
 }
-
