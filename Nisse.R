@@ -56,14 +56,17 @@ nisse <- function(name,mypin){
             toupper(all.listed[[x]][y])
         })
     })
-    
-    if(line == msrpw | 
-           suppressWarnings(as.integer(line) == 
-                                pincode[grep(toupper(name),
-                                             all.listed.cap)])){
-        if(line == msrpw) name <- all 
-        cat(paste(name.out, ", you are the Secret Santa of ",
-                  all[paired.with][all == name],"!",sep = ""))
+
+    if(line == msrpw) {
+        cat(paste(all," was the Secret Santa of ", all[paired.with],
+                  "!\n",sep = ""))
+    } else if(suppressWarnings(as.integer(line) == 
+                                   pincode[grep(toupper(name),
+                                                all.listed.cap)])){
+        cat(paste(all[grep(toupper(name),all.listed.cap)],
+                  ", you are the Secret Santa of ",
+                  all[paired.with][grep(toupper(name),all.listed.cap)],
+                  "!",sep = ""))
     } else {
         cat("Pincode wrong.")
     }
