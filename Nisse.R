@@ -37,7 +37,7 @@ nisse <- function(name,mypin){
     if(Sys.Date() < "2015-11-25"){
         cat(paste(name, ", we don't start until the 25th November 2015!",
                   sep = ""))
-        return(cat(" "))
+        return(cat("\n"))
     }
      
     if(line == msrpw | 
