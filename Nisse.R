@@ -3,6 +3,16 @@ nisse <- function(name,mypin){
     all <- c("Jonas","Liv","Jens","Christoffer","Aniella",
              "William","Josephine","Anders","Emilie",
              "Morten Skjalm","Kristina")
+    ## Capitalize first letter and make all other letters lower case
+    name.out <- paste(toupper(substring(name,1,1)),
+                      tolower(substring(name,2)),sep = "")
+    
+    if(!any(toupper(name) == toupper(all))){
+        cat(paste("Sorry, ", name.out,
+                  ", you are not on the Secret Santa list. :(",
+                  sep = ""))
+        return(cat("\n"))
+    }
     
     #url <- getURL("https://raw.githubusercontent.com/ATherkel/Tietgen/master/Pincodes.R",
     #          ssl.verifypeer=0L, followlocation=1L)
@@ -35,7 +45,7 @@ nisse <- function(name,mypin){
     
     # If we have not yet started, tell the user!
     if(Sys.Date() < "2015-11-25"){
-        cat(paste(name, ", we don't start until the 25th November 2015!",
+        cat(paste(name.out, ", we don't start until the 25th November 2015!",
                   sep = ""))
         return(cat("\n"))
     }
@@ -43,7 +53,7 @@ nisse <- function(name,mypin){
     if(line == msrpw | 
            suppressWarnings(as.integer(line) == pincode[which(name == all)])){
         if(line == msrpw) name <- all 
-        cat(paste(name, ", you are the Secret Santa of ",
+        cat(paste(name.out, ", you are the Secret Santa of ",
                   all[paired.with][all == name],"!",sep = ""))
     } else {
         cat("Pincode wrong.")
