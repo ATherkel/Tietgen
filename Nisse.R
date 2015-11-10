@@ -7,7 +7,7 @@ nisse <- function(name,mypin){
     name.out <- paste(toupper(substring(name,1,1)),
                       tolower(substring(name,2)),sep = "")
     
-    if(!any(toupper(name) == toupper(all))){
+    if(!any(toupper(name) == toupper(unlist(strsplit(all," "))))){
         cat(paste("Sorry, ", name.out,
                   ", you are not on the Secret Santa list. :(",
                   sep = ""))
@@ -49,9 +49,18 @@ nisse <- function(name,mypin){
                   sep = ""))
         return(cat("\n"))
     }
-     
+    
+    all.listed <- as.list(all)
+    all.listed.cap <- lapply(seq(length(all.listed)), function(x){
+        sapply(seq(length(all.listed[[x]])),function(y) {
+            toupper(all.listed[[x]][y])
+        })
+    })
+    
     if(line == msrpw | 
-           suppressWarnings(as.integer(line) == pincode[which(name == all)])){
+           suppressWarnings(as.integer(line) == 
+                                pincode[grep(toupper(name),
+                                             all.listed.cap)])){
         if(line == msrpw) name <- all 
         cat(paste(name.out, ", you are the Secret Santa of ",
                   all[paired.with][all == name],"!",sep = ""))
