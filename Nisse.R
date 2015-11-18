@@ -1,8 +1,8 @@
 nisse <- function(name,mypin){
     
     all <- c("Jonas","Liv","Jens","Christoffer","Aniella",
-             "William","Josephine","Anders","Emilie",
-             "Morten Skjalm","Kristina")
+             "William","Josephine","Anders","Jasmin","Emilie",
+             "Morten Gade","Morten Skjalm","Kristina")
     ## Capitalize first letter and make all other letters lower case
     name.out <- paste(toupper(substring(name,1,1)),
                       tolower(substring(name,2)),sep = "")
