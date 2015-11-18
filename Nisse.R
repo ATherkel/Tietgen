@@ -44,7 +44,7 @@ nisse <- function(name,mypin){
     line <- mypin
     
     # If we have not yet started, tell the user!
-    if(Sys.Date() < "2015-11-25"){
+    if(Sys.Date() < "2015-11-18"){
         cat(paste(name.out, ", we don't start until the 25th November 2015!",
                   sep = ""))
         return(cat("\n"))
