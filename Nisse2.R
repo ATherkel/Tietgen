@@ -34,7 +34,7 @@ nisse <- function(name,mypin){
     # startdate <- "2015-11-18" ## 2015
     startdate <- as.Date("2016-11-17") ## 2016
     
-    set.seed(507)
+    set.seed(105)
     pincode <- floor(runif(length(all),1e3,1e4-1))
     ## Make sure pincodes are not duplicated
     while(any(duplicated(pincode))){
@@ -42,7 +42,7 @@ nisse <- function(name,mypin){
     }
     
     # Set seed for replication
-    set.seed(18)
+    set.seed(507)
     
     
     msrpw <- "numeric"
@@ -59,7 +59,7 @@ nisse <- function(name,mypin){
         paired.with <- sample(all.seq)
     
     # If we have not yet started, tell the user!
-    if(Sys.Date() > startdate & mypin != msrpw){
+    if(Sys.Date() < startdate & mypin != msrpw){
         cat(paste0(name.out, ", we don't start until ",
                    format(startdate,"%A, %dth of %B %Y"), "!"))
         return(cat("\n"))
@@ -79,11 +79,11 @@ nisse <- function(name,mypin){
         paired.with.pin <- which(
             grep(NAME, all.listed.cap) == match(TRUE,pincode == mypin))
         
-        cat(paste(all[grep(NAME,all.listed.cap)][paired.with.pin],
+        cat(paste0(all[grep(NAME,all.listed.cap)][paired.with.pin],
                   ", you are the Secret Santa of ",
                   all[paired.with][
                       grep(NAME,all.listed.cap)][paired.with.pin],
-                  "!",sep = ""))
+                  "!\n"))
     } else {
         cat("Pincode wrong.\n")
     }
