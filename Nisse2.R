@@ -71,7 +71,7 @@ nisse <- function(name,mypin){
         cat(paste0(all," was the Secret Santa of ", all[paired.with],
                   "!\n"))
     } else if(!is.numeric(mypin)) {
-        return(cat("Password must be numeric."))
+        return(cat("Password must be numeric.\n"))
     } else if(any(suppressWarnings(as.integer(mypin) == 
                                    pincode[grep(NAME,
                                                 all.listed.cap)]))){
@@ -85,6 +85,6 @@ nisse <- function(name,mypin){
                       grep(NAME,all.listed.cap)][paired.with.pin],
                   "!",sep = ""))
     } else {
-        cat("Pincode wrong.")
+        cat("Pincode wrong.\n")
     }
 }
