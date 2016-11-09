@@ -34,7 +34,7 @@ nisse <- function(name,mypin){
     # startdate <- "2015-11-18" ## 2015
     startdate <- as.Date("2016-11-17") ## 2016
     
-    set.seed(105)
+    set.seed(101)
     pincode <- floor(runif(length(all),1e3,1e4-1))
     ## Make sure pincodes are not duplicated
     while(any(duplicated(pincode))){
@@ -42,7 +42,7 @@ nisse <- function(name,mypin){
     }
     
     # Set seed for replication
-    set.seed(507)
+    set.seed(501)
     
     
     msrpw <- "numeric"
