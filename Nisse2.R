@@ -1,3 +1,4 @@
+## Secret Santa script
 nisse <- function(name,mypin){
     ## 2015
     # all <- c("Jonas","Liv","Jens","Christoffer","Aniella",
