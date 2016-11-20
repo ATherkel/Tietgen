@@ -7,7 +7,7 @@ nisse <- function(name,mypin){
     
     ## 2016
     all <- c("Liv","Eva","Christoffer","Aniella",
-             "Matty","Nicoline","Anders","Jasmin","Emilie",
+             "Matty","Nicoline","Anders","Jimmi","Jasmin","Emilie",
              "Morten Østergaard Gade","Morten Skjalm Madsen","Belinda")
     
     # startdate <- "2015-11-18" ## 2015
