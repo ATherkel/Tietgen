@@ -6,7 +6,7 @@ nisse <- function(name,mypin){
     #          "Morten Gade","Morten Skjalm","Kristina")
     
     ## 2016
-    all <- c("Jonas","Liv","Eva","Christoffer","Aniella",
+    all <- c("Liv","Eva","Christoffer","Aniella",
              "Matty","Nicoline","Anders","Jasmin","Emilie",
              "Morten Østergaard Gade","Morten Skjalm Madsen","Belinda")
     
@@ -43,7 +43,7 @@ nisse <- function(name,mypin){
     }
     
     # Set seed for replication
-    set.seed(501)
+    set.seed(507)
     
     
     msrpw <- "numeric"
